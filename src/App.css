@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-hp : 380px;
+}
+
+@layer components {
+  .hamburger-line {
+    @apply block font-bold bg-gray-200 h-0.5 w-4.5 my-1 text-red-500 ;
+  }
+
+  .hamburger-active > span:nth-child(1) {
+    @apply rotate-45 origin-top-left
+  }
+  .hamburger-active > span:nth-child(2) {
+    @apply scale-0
+  }
+  .hamburger-active > span:nth-child(3) {
+    @apply -rotate-45 origin-bottom-left
+  }
+
+  .navbar-fixed {
+    @apply fixed w-full bg-white/10 top-0 z-40 backdrop-blur-sm shadow-[0_0_3px_1px_#222];
+  }
+
+  
+
+}
