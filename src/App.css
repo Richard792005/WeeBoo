@@ -20,7 +20,7 @@
   }
 
   .navbar-fixed {
-    @apply fixed w-full bg-white/10 top-0 z-40 backdrop-blur-sm shadow-[0_0_3px_1px_#222];
+    @apply fixed w-full z-20 bg-white/10 top-0  backdrop-blur-sm shadow-[0_0_3px_1px_#222];
   }
 
 

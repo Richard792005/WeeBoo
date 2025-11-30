@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useRef, useState } from 'react'
+import { use, useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css' // css import
@@ -13,67 +13,67 @@ import uchiha from './assets/uchiha.svg'
 
 
 const animesData = [
-  {
-    id: 22,
-    creator: 'Masashi Kishimoto',
-    title_anime: 'Naruto Shippuden',
-    year: '2005',
-    image: 'https://cdn.myanimelist.net/images/anime/11/63249l.jpg',
-    score: 8.71,
-    sypnosis:
-      "Naruto Uzumaki wants to be the best ninja in the land. He's done well so far, but with the looming danger posed by the mysterious Akatsuki organization, Naruto knows he must train harder than ever and leaves his village for intense exercises that will push him to his limits"
-  },
-  {
-    id: 23,
-    title_anime: 'Inazuma Eleven Go',
-    creator: 'Masashi Kishimoto',
+  // {
+  //   id: 22,
+  //   creator: 'Masashi Kishimoto',
+  //   title_anime: 'Naruto Shippuden',
+  //   year: '2005',
+  //   image: 'https://cdn.myanimelist.net/images/anime/11/63249l.jpg',
+  //   score: 8.71,
+  //   sypnosis:
+  //     "Naruto Uzumaki wants to be the best ninja in the land. He's done well so far, but with the looming danger posed by the mysterious Akatsuki organization, Naruto knows he must train harder than ever and leaves his village for intense exercises that will push him to his limits"
+  // },
+  // {
+  //   id: 23,
+  //   title_anime: 'Inazuma Eleven Go',
+  //   creator: 'Masashi Kishimoto',
 
-    year: '2012',
-    image: 'https://cdn.myanimelist.net/images/anime/7/29246l.jpg',
-    score: 7.03,
-    sypnosis:
-      'Tenma Matsukaze is a new student at Raimon Junior High. Due to his love for soccer, he decides to join the school soccer team, which gained its reputation after the amazing performance shown ten years earlier in the Football Frontier International, a tournament that hosts the best youth teams the world has to offer. Unfortunately, the once renowned school doesnt have the soccer spirit it once enjoyed. Tenma and his teammates will look to shift this paradigm and fight back against their evil oppressors. Thankfully, they will not be alone in this battle, as they will get help from a group known as the "Resistance." Cheer on the boys of Inazuma Eleven Go as they fight the good fight!'
-  },
-  {
-    id: 24,
-    title_anime: 'Captain Tsubasa',
-    creator: 'Masashi Kishimoto',
-    year: '2018 - 2019',
-    image: 'https://cdn.myanimelist.net/images/anime/1396/94784l.jpg',
-    score: 7.42,
-    sypnosis:
-      "Captain Tsubasa is the passionate story of an elementary school student whose thoughts and dreams revolve almost entirely around the love of soccer. 11-year-old Tsubasa Oozora started playing football at a very young age, and while it was mostly just a recreational sport for his friends, for him, it developed into something of an obsession. In order to pursue his dream to the best of his elementary school abilities, Tsubasa moves with his mother to Nankatsu city, which is well-known for its excellent elementary school soccer teams. But although he was easily the best in his old town, Nankatsu has a lot more competition, and he will need all of his skill and talent in order to stand out from this new crowd."
-  },
-  {
-    id: 25,
-    title_anime: 'Pokemon',
-    creator: 'Masashi Kishimoto',
-    year: '1997 - 2002',
-    image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
-    score: 7.41,
-    sypnosis:
-      'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
-  },
-  {
-    id: 25,
-    title_anime: 'Pokemon',
-    creator: 'Masashi Kishimoto',
-    year: '1997 - 2002',
-    image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
-    score: 7.41,
-    sypnosis:
-      'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
-  },
-  {
-    id: 25,
-    title_anime: 'Pokemon',
-    creator: 'Masashi Kishimoto',
-    year: '1997 - 2002',
-    image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
-    score: 7.41,
-    sypnosis:
-      'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
-  }
+  //   year: '2012',
+  //   image: 'https://cdn.myanimelist.net/images/anime/7/29246l.jpg',
+  //   score: 7.03,
+  //   sypnosis:
+  //     'Tenma Matsukaze is a new student at Raimon Junior High. Due to his love for soccer, he decides to join the school soccer team, which gained its reputation after the amazing performance shown ten years earlier in the Football Frontier International, a tournament that hosts the best youth teams the world has to offer. Unfortunately, the once renowned school doesnt have the soccer spirit it once enjoyed. Tenma and his teammates will look to shift this paradigm and fight back against their evil oppressors. Thankfully, they will not be alone in this battle, as they will get help from a group known as the "Resistance." Cheer on the boys of Inazuma Eleven Go as they fight the good fight!'
+  // },
+  // {
+  //   id: 24,
+  //   title_anime: 'Captain Tsubasa',
+  //   creator: 'Masashi Kishimoto',
+  //   year: '2018 - 2019',
+  //   image: 'https://cdn.myanimelist.net/images/anime/1396/94784l.jpg',
+  //   score: 7.42,
+  //   sypnosis:
+  //     "Captain Tsubasa is the passionate story of an elementary school student whose thoughts and dreams revolve almost entirely around the love of soccer. 11-year-old Tsubasa Oozora started playing football at a very young age, and while it was mostly just a recreational sport for his friends, for him, it developed into something of an obsession. In order to pursue his dream to the best of his elementary school abilities, Tsubasa moves with his mother to Nankatsu city, which is well-known for its excellent elementary school soccer teams. But although he was easily the best in his old town, Nankatsu has a lot more competition, and he will need all of his skill and talent in order to stand out from this new crowd."
+  // },
+  // {
+  //   id: 25,
+  //   title_anime: 'Pokemon',
+  //   creator: 'Masashi Kishimoto',
+  //   year: '1997 - 2002',
+  //   image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
+  //   score: 7.41,
+  //   sypnosis:
+  //     'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
+  // },
+  // {
+  //   id: 25,
+  //   title_anime: 'Pokemon',
+  //   creator: 'Masashi Kishimoto',
+  //   year: '1997 - 2002',
+  //   image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
+  //   score: 7.41,
+  //   sypnosis:
+  //     'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
+  // },
+  // {
+  //   id: 25,
+  //   title_anime: 'Pokemon',
+  //   creator: 'Masashi Kishimoto',
+  //   year: '1997 - 2002',
+  //   image: 'https://cdn.myanimelist.net/images/anime/1787/140239l.jpg',
+  //   score: 7.41,
+  //   sypnosis:
+  //     'Pokémon are peculiar creatures with a vast array of different abilities and appearances; many people, known as Pokémon trainers, capture and train them, often with the intent of battling others. Young Satoshi has not only dreamed of becoming a Pokémon trainer but also a "Pokémon Master," and on the arrival of his 10th birthday, he finally has a chance to make that dream a reality. Unfortunately for him, all three Pokémon available to beginning trainers have already been claimed and only Pikachu, a rebellious Electric-type Pokémon, remains. However, this chance encounter would mark the start of a lifelong friendship and an epic adventure!'
+  // }
 ]
 
 
@@ -81,12 +81,76 @@ const animesData = [
 function App() {
   const [animes, setAnimes] = useState(animesData)
   const [selectedAnime, setSelectedAnime] = useState(animesData)
-  const [query, setQuery] = useState('')
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null)
+
+  const [query, setQuery] = useState()
   const [isOpen1, setIsOpen1] = useState(true)
   const [isOpen2, setIsOpen2] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const headerRef = useRef(null);
+
+
+  const [name, setName] = useState('')
+
+  // buat function handleSelectedAnime
+  function handleSelectedAnime(id) {
+    setModalOpen(modal => !modal)
+    const newAnime = animes.filter(anime => anime.mal_id === id)
+    setSelectedAnime(newAnime[0])
+
+
+  }
+  useEffect(() => {
+    // console.log(`Ini selected Anime ${selectedAnime.title}`)
+    console.log(selectedAnime)
+  }, [selectedAnime])
+
+
+
+
+  async function handleSearchItem(e) {
+    e.preventDefault()
+    try {
+      const newItem = {
+        name,
+      }
+      console.log(newItem)
+      setName('')
+
+      setLoading(true);
+      setError(null);
+
+      const res = await fetch(`https://api.jikan.moe/v4/anime?q=${name}`)
+      if (!res.ok) {
+        throw new Error('Gagal mengambil data anime !');
+      }
+      const json = await res.json();
+      setAnimes(json.data)
+      setSelectedAnime(json.data)
+      const newQuery = {
+        total: json.pagination.items.total,
+        per_page: json.pagination.items.per_page
+      }
+      setQuery(newQuery)
+    }
+    catch (err) {
+      setError(err.message);
+    }
+    finally {
+      setLoading(false)
+
+    }
+
+  }
+
+
+  // buat cek ketika setelah di klik, react akan render :
+  useEffect(() => {
+    console.log(`Ini anime yang di klik : ${selectedAnime.title_anime}`)
+    console.log(modalOpen)
+  }, [selectedAnime])
 
   useEffect(() => {
     if (!headerRef.current) return;
@@ -100,44 +164,14 @@ function App() {
   }, [])
 
 
-  const [name, setName] = useState('')
-
-  // buat function handleSelectedAnime
-  function handleSelectedAnime(id) {
-    // const newAnime = animes.filter(anime => anime.id === id)
-    // setSelectedAnime(newAnime[0])
-
-    setModalOpen(modal => !modal)
-    setSelectedAnime((anime) => {
-      const newAnime = animes.filter(anime => anime.id === id) // ambil data dari id yg sama lalu set ke selectedAnime
-      return anime = newAnime[0]
-    })
-
-  }
-
-  function handleSearchItem(e) {
-    e.preventDefault()
-    const newItem = {
-      name,
-    }
-    console.log(newItem)
-
-    setName('')
-
-  }
-
-  // buat cek ketika setelah di klik, react akan render :
-  useEffect(() => {
-    console.log(`Ini anime yang di klik : ${selectedAnime.title_anime}`)
-    console.log(modalOpen)
-  }, [selectedAnime])
-
-
 
   function handleHamburger(e) {
     e.preventDefault()
     setIsHamburgerOpen(open => !open)
   }
+
+
+
   return (
     <>
       {/* kita akan buat navbar yang dari samping <muncul> */}
@@ -160,7 +194,12 @@ function App() {
           <form className='lg:w-full' onSubmit={handleSearchItem} action="">
             <div className="mt-3">
               <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="text-center rounded-lg bg-cyan-600/50 placeholder:text-white focus:outline-0 text-white py-2 px-3 md:w-120 lg:w-full" placeholder='Search anime' />
-              <span className="text-white text-center text-sm block mt-3">Found 4 Result</span>
+              {query && (
+                <>
+                  <span className="text-white text-center text-sm block mt-3">Found {query.total} Result</span>
+                  <span className="text-white text-center text-sm block mt-3">Total page : {query.per_page}</span>
+                </>
+              )}
             </div>
           </form>
           <img onContextMenu={(e) => e.preventDefault()} src={Itachi} alt="" className="w-14 ml-2 hp:hidden lg:inline-block" />
@@ -172,17 +211,7 @@ function App() {
           <button id='buttonList' onClick={() => setIsOpen1(!isOpen1)} type='button' className="absolute top-2 right-2 w-7 h-7 flex justify-center items-center rounded-full text-white font-bold text-xl text-center bg-slate-800/40 cursor-pointer">{isOpen1 ? '-' : '+'}</button>
           {isOpen1 && (
             <ul className='list list-anime pt-12 pb-5 justify-center  lg:max-w-full flex flex-wrap lg:block gap-2 '>
-              {animes.map((anime) => (
-                <li key={anime.id} className='w-44 lg:w-full   mb-4 pb-4 px-5 border-b-2 rounded-md border-cyan-400/30 cursor-pointer lg:flex lg:gap-5'>
-                  <div className="rounded-lg overflow-hidden">
-                    <img src={anime.image} alt="" className="object-cover object-center h-40 lg:h-24 xl:h-23 w-full lg:w-20  xl:w-16" />
-                  </div>
-                  <div className='' onClick={() => handleSelectedAnime(anime.id)}>
-                    <span className="text-white text-sm lg:text-[17px] font-semibold">{anime.title_anime}</span>
-                    <p className='text-white text-xs lg:text-sm font-light'>{anime.year}</p>
-                  </div>
-                </li>
-              ))}
+              <MovieList animes={animes} error={error} loading={loading} onSearchItem={handleSearchItem} onSelectedItem={handleSelectedAnime} />
             </ul>
           )}
         </section>
@@ -191,14 +220,17 @@ function App() {
           <button id='buttonDetail' onClick={() => setIsOpen2(!isOpen2)} type='button' className="absolute top-2 right-2 w-7 h-7 flex justify-center items-center rounded-full text-white font-bold text-xl text-center bg-slate-800/40 cursor-pointer">{isOpen2 ? '-' : '+'}</button>
           {isOpen2 && (
             <>
-              <div className={`${selectedAnime.id === undefined ? "hidden" : "flex"} gap-9`}>
-                <img src={selectedAnime.image} alt="" className="w-40 rounded-tl-xl rounded-br-xl" />
-                <div className='mt-5'>
-                  <span className='text-white font-semibold leading-relaxed tracking-widest'>{selectedAnime.title_anime}</span>
-                  <p className='text-white font-semibold leading-relaxed tracking-widest'>{`${selectedAnime.year}`}</p>
+              <div className={`${selectedAnime.mal_id === undefined ? "hidden" : "flex"} gap-9`}>
+                <img src={selectedAnime?.images?.jpg.image_url} alt="" className="w-40 rounded-tl-xl rounded-br-xl" />
+                <div className='mt-10'>
+                  <span className='text-white font-semibold leading-relaxed tracking-widest'>{selectedAnime.title}</span>
+                  <p className={`${selectedAnime?.year === null ? "hidden" : ""} text-white font-semibold leading-relaxed tracking-widest`}>{`${selectedAnime?.year}`}</p>
+                  <p className='text-white font-semibold leading-relaxed tracking-widest'>{`${selectedAnime?.score}`}</p>
+                  <p className='text-white font-semibold leading-relaxed tracking-widest'>{`${selectedAnime?.duration}`}</p>
+                  <p className='text-white font-semibold leading-relaxed tracking-widest'>{`from : ${selectedAnime?.aired?.string}`}</p>
                 </div>
               </div>
-              <p className="text-gray-200 px-7 py-10 leading-relaxed italic">{selectedAnime.sypnosis}</p>
+              <p className="text-gray-200 px-7 py-10 leading-relaxed italic">{selectedAnime?.synopsis}</p>
             </>
 
           )}
@@ -225,12 +257,52 @@ function App() {
         </div>
       </section>
 
-      <footer className='sm:fixed lg:static bottom-0 w-full text-slate-100 text-center py-6 bg-slate-900'>
+      <footer className={`${animes ? "hp:fixed" : "hp:static"} lg:static bottom-0 w-full text-slate-100 text-center py-6 bg-slate-900`}>
         <span className="font-semibold text-xl ">Weeboo</span>
         <p className="text-slate-400 text-base">&copy; 2025 AnimeList <span className="inline-block mt-2 animate-bounce">🔥</span>. All rights reserved.</p>
       </footer>
     </>
   )
+}
+
+// buat function request api
+
+function MovieList({ animes, loading, error, onSelectedItem, onSearchItem }) {
+  const [text, setText] = useState([])
+
+
+
+  return (
+    <>
+      {loading && (
+        <h1 className="text-white">Loading</h1>
+      )}
+      {error && (
+        <>
+          <p className="text-white font-bold">Error : {error}</p>
+          <button type="button" onClick={onSearchItem}
+          >Coba Lagi</button>
+        </>
+      )}
+      {animes && (
+        <ul>
+          {animes.map((anime) => (
+            <li key={anime.mal_id} className='w-44 lg:w-full   mb-4 pb-4 px-5 border-b-2 rounded-md border-cyan-400/30 cursor-pointer lg:flex lg:gap-5'>
+              <div className="rounded-lg overflow-hidden">
+                <img src={anime.images.jpg.image_url} alt="bg" className="object-cover object-center h-40 lg:h-24 xl:h-23 w-full lg:w-20  xl:w-16" />
+              </div>
+              <div className='' onClick={() => onSelectedItem(anime.mal_id)}>
+                <span className="text-white text-sm lg:text-[17px] font-semibold">{anime.title}</span>
+                <p className='text-white text-xs lg:text-sm font-light'>{anime.year}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </>
+
+  )
+
 }
 
 function AnimeSideBar({ isHamburgerOpen }) {
@@ -258,7 +330,7 @@ function AnimeSideBar({ isHamburgerOpen }) {
   ]
 
   return (
-    <div className={`fixed top-0 left-0 h-full w-[90%] md:w-90 lg:w-80 bg-slate-900/95 backdrop-blur-sm  z-50 transform transition-all duration-500 ease-out border-r border-purple-500/50 ${isHamburgerOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <div className={`fixed z-20 top-0 left-0 h-full w-[90%] md:w-90 lg:w-80 bg-slate-900/95 backdrop-blur-sm transform transition-all duration-500 ease-out border-r border-purple-500/50 ${isHamburgerOpen ? "translate-x-0" : "-translate-x-full"}`}>
 
 
       <section id='navbar-header' className="py-5 px-4 border-b border-purple-500/20">
