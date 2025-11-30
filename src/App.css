@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --breakpoint-hp : 380px;
+  --breakpoint-hp : 360px;
 }
 
 @layer components {
@@ -23,6 +23,6 @@
     @apply fixed w-full bg-white/10 top-0 z-40 backdrop-blur-sm shadow-[0_0_3px_1px_#222];
   }
 
-  
+
 
 }
