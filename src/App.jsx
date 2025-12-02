@@ -330,7 +330,7 @@ function AnimeSideBar({ isHamburgerOpen }) {
   ]
 
   return (
-    <div className={`fixed z-20 top-0 left-0 h-full w-[90%] md:w-90 lg:w-80 bg-slate-900/95 backdrop-blur-sm transform transition-all duration-500 ease-out border-r border-purple-500/50 ${isHamburgerOpen ? "translate-x-0" : "-translate-x-full"}`}>
+    <div className={`fixed inset-0  top-0 left-0 z-50  h-screen w-[90%] md:w-90 lg:w-80 bg-slate-900/95 backdrop-blur-sm transform transition-all duration-500 ease-out border-r border-purple-500/50 ${isHamburgerOpen ? "translate-x-0" : "-translate-x-full"}`}>
 
 
       <section id='navbar-header' className="py-5 px-4 border-b border-purple-500/20">
